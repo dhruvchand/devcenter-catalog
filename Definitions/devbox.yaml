@@ -3,21 +3,26 @@ image: microsoftwindowsdesktop_windows-ent-cpc_win11-21h2-ent-cpc-m365
 hostInformation: general_i_16c64gb256ssd_v2
 supportsHibernation: false
 setupTasks:
-  - task: winget
+  - task: choco
+    catalogName: "default"
     inputs:
-      package: OpenJS.NodeJS.LTS
-  - task: winget
+      package: "git"
+  - task: choco
+    catalogName: "default"
     inputs:
-      package: Google.Chrome
-  - task: winget
+      package: "nodejs"
+  - task: choco
+    catalogName: "default"
     inputs:
-      package: CoreyButler.NVMforWindows
-  - task: winget
+      package: "nvm"
+  - task: choco
+    catalogName: "default"
     inputs:
-      package: Notepad++.Notepad++
-  - task: winget
+      package: "googlechrome"
+  - task: choco
+    catalogName: "default"
     inputs:
-      package: NVAccess.NVDA
+      package: "nvda"
   - task: downloadRepo
     inputs:
       basePath: 'https://github.com/dhruvchand/devcenter-catalog.git'
