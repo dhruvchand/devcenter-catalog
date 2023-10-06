@@ -1,5 +1,5 @@
 name: downloadRepo
-command: "./downloadRepo.ps1 -repoName {{repoName}} -branch {{branch}} -basePath {{basePath}})"
+command: "./downloadRepo.ps1 -repoName {{repoName}} -branch {{branch}} -basePath {{basePath}}"
 inputs:
   repoName:
     type: string
