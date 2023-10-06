@@ -1,4 +1,3 @@
-[1:49 PM] Ankur Patel [apatel] (Guest)
 param(
     [Parameter()]
     [string]$repoName,
