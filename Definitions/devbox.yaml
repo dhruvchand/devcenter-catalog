@@ -1,11 +1,25 @@
-name: ircc-sdc-test
+name: WebApps
 image: microsoftwindowsdesktop_windows-ent-cpc_win11-21h2-ent-cpc-m365
-hostInformation: general_i_8c32gb512ssd_v2
+hostInformation: general_i_16c64gb256ssd_v2
+supportsHibernation: false
 setupTasks:
-  - task: choco
+  - task: winget
     inputs:
-      package: "git"
-  - task: choco
+      package: OpenJS.NodeJS.LTS
+  - task: winget
     inputs:
-      package: "nodejs"
-  - task: setup-design-system
+      package: Google.Chrome
+  - task: winget
+    inputs:
+      package: CoreyButler.NVMforWindows
+  - task: winget
+    inputs:
+      package: Notepad++.Notepad++
+  - task: winget
+    inputs:
+      package: NVAccess.NVDA
+  - task: downloadRepo
+    inputs:
+      basePath: 'https://github.com/dhruvchand/devcenter-catalog.git'
+      branch: 'develop'
+      repoName: 'workspace.browse'

@@ -1,0 +1,15 @@
+name: downloadRepo
+command: "./downloadRepo.ps1 -repoName {{repoName}} -branch {{branch}} -basePath {{basePath}})"
+inputs:
+  repoName:
+    type: string
+    defaultValue: ""    
+    required: true
+  branch:
+    type: string
+    defaultValue: ""    
+    required: true
+  basePath:
+    type: string
+    defaultValue: ""    
+    required: true
