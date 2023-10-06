@@ -7,7 +7,7 @@ param(
     [string]$basePath
 )
  
-$path = "$($env:USERPROFILE)\Repos"
+$path = "C:\\Repos"
 $localPath = "$($path)\$($repoName)"
 $remotePath = "$($basePath)/$($repoName)"
  
