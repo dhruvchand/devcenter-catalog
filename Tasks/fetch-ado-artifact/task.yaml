@@ -49,7 +49,7 @@ documentation:
   notes: |
     This task allows you to download the artifact from Azure DevOps. 
   examples:
-    - task: git-clone
+    - task: download-ado-universal-package
       description: Download the artifact
       inputs:
         organization: https://dev.azure.com/lylexu/
