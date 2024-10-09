@@ -4,7 +4,7 @@ $schema: 1.0
 name: dsc
 description: Applies a dsc configuration to the Dev Box.
 author: Microsoft Corporation
-command: '{{configurationPath}} | ./runDSC.ps1 -InlineConfiguration {{inlineConfiguration4}}'
+command: '{{configurationPath}} | ./runDSC.ps1 -InlineConfiguration {{inlineConfiguration}}'
 parameters:
   configurationPath:
     default: ''
