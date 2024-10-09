@@ -4,7 +4,7 @@ $schema: 1.0
 name: dev-drive
 description: enable devdrive
 author: Microsoft Corporation
-command: ".\\Run-Command.ps1 -DevBoxDevDrive {{command}} -OsDriveMinSizeGB {{workingDirectory}} -EnableGVFS {{command}} -EnableContainers {{workingDirectory}}"
+command: ".\\Run-Command.ps1 -DevBoxDevDrive {{DevBoxDevDrive}} -OsDriveMinSizeGB {{OsDriveMinSizeGB}} -EnableGVFS {{EnableGVFS}} -EnableContainers {{EnableContainers}}"
 parameters:
   DevBoxDevDrive:
     type: string
