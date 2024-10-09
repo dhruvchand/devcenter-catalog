@@ -1,0 +1,29 @@
+# This is a simple powershell command execution task for Dev Box.
+
+$schema: 1.0
+name: dev-drive
+description: enable devdrive
+author: Microsoft Corporation
+command: ".\\Run-Command.ps1 -DevBoxDevDrive {{command}} -OsDriveMinSizeGB {{workingDirectory}} -EnableGVFS {{command}} -EnableContainers {{workingDirectory}}"
+parameters:
+  DevBoxDevDrive:
+    type: string
+    default: "E"
+    required: true
+    description: DevBoxDevDrive
+  OsDriveMinSizeGB:
+    type: int
+    default: 250
+    required: false
+    description: OsDriveMinSizeGB
+  EnableGVFS:
+    type: boolean
+    default: false
+    required: false
+    description: EnableGVFS
+  EnableContainers:
+    type: boolean
+    default: false
+    required: false
+    description: EnableContainers
+
