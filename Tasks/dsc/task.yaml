@@ -4,20 +4,20 @@ $schema: 1.0
 name: dsc
 description: Applies a dsc configuration to the Dev Box.
 author: Microsoft Corporation
-command: '{{configurationPath}} | ./runDSC.ps1 -InlineConfiguration {{inlineConfiguration}}'
+command: '{{configurationPath}} | ./runDSC.ps1 -InlineConfiguration {{inlineConfiguration4}}'
 parameters:
   configurationPath:
     default: ''
     type: 'string'
-    required: true
+    required: false
     description: |
-      The path to a DSC configuration file in Yaml or JSON format. The path can be either local on the machine or a URL. If the path is a URL, the file will be downloaded to a temporary location and then applied. The property also accepts "inline" as a value, to indicate the configuration text is included within the workload Yaml using the "inlineConfiguration" property.
+      The path to a DSC configuration file in Yaml or JSON format. The path can be either local on the machine or a URL. If the path is a URL, the file will be downloaded to a temporary location and then applied. Not required if using the "inlineConfiguration" property.
   inlineConfiguration:
     default: ''
     type: 'string'
     required: false
     description: |
-      For very small configurations, you can specify the configuration within the task. To use this option set "configurationPath" to "inline", otherwise the value of inlineConfiguration is ignored. The content will not be evaluated by your editor because it is parsed as a string.
+      For very small configurations, you can specify the configuration within the task. If content is provided for "configurationPath" either directly or by pipeline input, the value of inlineConfiguration is ignored. The content will not be evaluated by your editor because it is parsed as a string.
 documentation:
   notes: This task allows applying a DSC configuration file.
   examples:

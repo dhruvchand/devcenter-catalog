@@ -1,0 +1,9 @@
+$schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2024/04/config/document.json
+resources:
+- name: current user registry
+  type: Microsoft.Windows/Registry
+  properties:
+    keyPath: HKCU\Software\Microsoft\Windows\CurrentVersion\
+    valueName: Run
+    valueData: 
+      String: C:\Windows\System32\notepad.exe
