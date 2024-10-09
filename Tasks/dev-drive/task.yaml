@@ -12,7 +12,7 @@ parameters:
     required: true
     description: DevBoxDevDrive
   OsDriveMinSizeGB:
-    type: int
+    type: number
     default: 250
     required: false
     description: OsDriveMinSizeGB
