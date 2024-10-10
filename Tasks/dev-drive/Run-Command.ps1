@@ -189,7 +189,7 @@ try
     Write-Host "Allowing the following filesystem filter drivers to mount to any Dev Drive:"
     Write-Host "  $AllowedFilterList"
     Invoke-Program fsutil "devdrv setFiltersAllowed $AllowedFilterList"
-
+    $DevBoxDriveWithColon = $DevBoxDevDrive + ":"
     Write-Host "Setting DevDrive $DevBoxDriveWithColon as trusted"
     Invoke-Program fsutil "devdrv trust $DevBoxDriveWithColon"
 
