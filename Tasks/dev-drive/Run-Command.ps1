@@ -141,6 +141,7 @@ try
         if ((Get-PSDrive).Name -match "^" + $DevBoxDevDrive + "$") {
             $DiskPartDeleteScriptPath = $TempDir + "/CreateDevDriveDelExistingVolume.txt"
             $rmcmd = "SELECT DISK 0 `r`n SELECT VOLUME=$DevBoxDevDrive `r`n DELETE VOLUME OVERRIDE"
+            If (!(Test-Path $DiskPartDeleteScriptPath)) {New-Item -Path $DiskPartDeleteScriptPath -Force}
             $rmcmd | Set-Content -Path $DiskPartDeleteScriptPath
             Write-Host "Delete existing $DevBoxDevDrive `r`n $rmcmd"
             diskpart /s $DiskPartDeleteScriptPath
@@ -157,6 +158,7 @@ try
         # https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/shrink
         $DiskPartScriptPath = $TempDir + "/CreateDevDriveFromExistingVolume.txt"
         $cmd = "SELECT VOLUME C: `r`n SHRINK desired = $targetDevDriveSizeMB minimum = $targetDevDriveSizeMB `r`n CREATE PARTITION PRIMARY `r`n ASSIGN LETTER=$DevBoxDevDrive `r`n"
+        If (!(Test-Path $DiskPartScriptPath)) {New-Item -Path $DiskPartScriptPath -Force}
         $cmd | Set-Content -Path $DiskPartScriptPath
         Write-Host "Creating $DevBoxDevDrive ReFS volume: diskpart:`r`n $cmd"
         diskpart /s $DiskPartScriptPath
